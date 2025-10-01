@@ -6,6 +6,7 @@ require "set"
 # raises ArgumentError if nth < 1
 def find_missing_number(arr, nth: 1)
   raise ArgumentError, "nth must be >= 1" if nth < 1
+  return nth if arr.empty?
 
   # Using set since it is more efficient for lookups, and no need to order it(which would increment time complexity)
   numbers_set = arr.to_set
